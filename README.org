@@ -1,0 +1,115 @@
+#+TITLE: Image Search Engine
+#+DESCRIPTION: Image Search Engine with Python and OpenCV
+
+* Image Search Engine:
+In normal Search Engine like Google, DuckDuckGo, Bing(lol) we use text to search the database(or Web), we simply enter a few keywords related to the content that we want to find and BAM the result.
+But in Image Search Engine we use image instead of text to query the Database(or Web).
+
+* Types Of ISE (Image Search Engine):
+In general, there tend to be three types of image search engines:\\
+(1) search by meta-data
+(2) search by example
+(3) hybrid approach of the two
+
+** Search By Meta-Data
+Search by meta-data systems rarely examine the contents of the image itself. Instead, they rely on textual clues such as\\ 
+(1) Manual annotations and tagging performed by humans  
+(2) Automated contextual hints, such as the text that appears near the image on a webpage
+
+** Search By Example
+Search by example systems, on the other hand, rely solely on the contents of the image — no keywords are assumed to be provided. The image is analyzed, quantified, and stored so that similar images are returned by the system during a search.
+
+** Hybrid Approach Of The Two
+hybrid image search engine includes both text keywords along with features extracted from the images.
+
+* Dataset Used To Test The Program
+[[ftp://ftp.inrialpes.fr/pub/lear/douze/data/jpg1.tar.gz]] \\
+[[ftp://ftp.inrialpes.fr/pub/lear/douze/data/jpg2.tar.gz]]
+
+* The Task
+The task for this program is to be used as a Image Search Engine for a Database/Dataset
+
+* How To Use
+I recomend you read the code (Code is well Defined and Commented) To understand How this program works (Or Wait for my Youtube tutorial/video when this project is compeleted)
+
+** Step 1:
+install Python3, pip and git \\
+
+Linux
+#+BEGIN_SRC Bash
+    # For Debian and Ubuntu Users
+    sudo apt install python3
+    sudo apt install python3-pip
+    sudo apt install git
+#+END_SRC
+
+#+BEGIN_SRC Bash
+    # For Arch Users
+    sudo pacman -S python # Default python in arch is python3 not python2.7
+    sudo pacman -S python-pip
+    sudo pacman -S git
+#+END_SRC
+
+#+BEGIN_SRC Bash
+    # For Fedora Users
+    sudo dnf install python3
+    sudo dnf install python3-pip
+    sudo dnf install git
+#+END_SRC
+
+Compile It From Source : [[https://www.unixmen.com/howto-install-python-3-x-in-ubuntu-debian-fedora-centos/]] \\
+
+MacOS\\
+
+From This link Download the latest python3 for MacOS: [[https://www.python.org/]] \\
+
+Or Use Homebrew
+#+BEGIN_SRC Bash
+    # To install Homebrew on MacOS
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+#+END_SRC
+
+#+BEGIN_SRC Bash
+    # To install Python3 on MacOS using Homebrew
+    brew install python
+    # or brew install python3
+    brew install git
+#+END_SRC
+this will autometically install pip as well you might see there is no pip then try to use pip3 \\
+
+Windows\\
+
+Got to this link and Download and install python3 for windows :  [[https://www.python.org/]] (I personally preffer linux-subsystem)
+
+
+* Step 2
+Install python requirements using pip/pip3
+
+#+BEGIN_SRC Bash
+    pip install -r requirements
+    # you can also use sudo in mac and linux to install as root but i don't suggest you do it
+#+END_SRC
+
+* Step 3
+Download the git-repo
+
+#+BEGIN_SRC Bash
+    git clone https://gitlab.com/saurabhtanwar/image-search-engine.git
+    # then go into git directory
+    cd image-search-engine
+#+END_SRC
+
+* Step 4 
+Index your Image Dataset for learning
+#+BEGIN_SRC Bash
+    python index.py --dataset <image-dataset-directory> --index index.csv # index.csv is out file for indexing
+#+END_SRC
+
+* Step 5
+Now Use Image Search Engine
+#+BEGIN_SRC Bash
+    python search.py --index index.csv --query <Loacation of image to use a query/searching perameter> --result-path <image-dataset-directory>
+#+END_SRC
+
+* This project is not fully compeleted 
+(As per my vision... It works but i want to make it so that it can search several shoping wesites and then arrenge data or products using 2 perameters i.e. More accurate products and more cheaper products)
